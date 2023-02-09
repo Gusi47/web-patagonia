@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.historia {
+
+
+    &__parrafoh {
+        font-size: 3rem;
+        font-weight: 300;
+        font-style: italic;
+        padding: 3rem;
+        color: v.$verde;
+        line-height: 1.5;
+
+        @include m.tablet {
+            padding: 5rem;
+        }
+    }
+}

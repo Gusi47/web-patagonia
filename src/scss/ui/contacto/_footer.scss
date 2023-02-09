@@ -1,0 +1,42 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footerc {
+  background-color: v.$verde;
+    @include m.flex(flex, row, space-around, center );
+    width: 100%;
+    margin: 0 auto;
+    
+
+    &__socialesc {
+        margin-bottom: 3rem;
+        @include m.grid(1, 1fr);
+    }
+
+    &__redes {
+      @include m.grid(2, 1fr);
+    }
+
+    &__flexr {
+      @include m.flex(flex, column, space-between, center);
+    }
+ 
+    &__h3r {
+       color: v.$fondoBody;
+         font-size: 2rem;
+         padding: 3rem 0 3rem 0;
+    }
+ 
+    &__h4c {
+       text-align: center;
+       color: v.$fondoBody;
+       font-size: 3rem;
+       padding: 3rem;
+      border-bottom: 2px solid v.$fondoBody;
+    }
+
+    &__imgf {
+      width: 8rem;
+      height: auto;
+    }
+ }

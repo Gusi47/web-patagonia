@@ -1,0 +1,69 @@
+@use 'base/variables' as v;
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+
+@mixin tablet {   
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin flex($display, $direcction, $justify, $aling ) {
+    display: $display;
+    flex-direction: $direcction;
+    justify-content: $justify;
+    align-items: $aling;
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin heading {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    font-size: 4rem;
+}
+
+// @include m.bgImage('../img/manos.jpg');
+@mixin bgImage($url) {
+    background-image: url($url);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin boton($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 1.5rem 1.5rem;
+    color: $colorTexto;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    transition:  background-color;
+}
+
+// @mixin flexs($dir , $wrap , $jus , $align) {
+//     display: flex;
+//     flex-flow: $dir $wrap;
+//     justify-content: $just;
+//     align-items: $align;
+    
+// }

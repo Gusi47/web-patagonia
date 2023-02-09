@@ -1,0 +1,10 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.fondofoto {
+    width: 100%;
+    height: 40rem;
+    @include m.bgImage('../img/fuego-1.jpg');
+    background-attachment: fixed;
+
+}

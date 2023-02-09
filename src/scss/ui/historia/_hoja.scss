@@ -1,0 +1,37 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.separadoresh {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: 8rem auto 8rem auto;  
+    
+    &__imagenhojahtop {
+        
+        width: 80%;
+        height: auto;
+
+        @include m.tablet {
+            width: 30%;
+            height: auto;
+            
+        }
+    }
+
+    &__imagenhojah {
+        width: 100%;
+        height: auto;
+
+        @include m.tablet {
+            width: 30%;
+            height: auto;
+           
+        }
+    }
+
+
+}

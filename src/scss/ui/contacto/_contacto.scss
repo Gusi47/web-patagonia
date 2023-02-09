@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.datosc {
+   width: 100%;
+   margin: 0 auto;
+   
+   &__datosc {
+     width: 100%;
+     margin: 0 auto;
+     background-color: v.$fondoBody;
+       @include m.grid(1, 1fr);
+     }
+
+     &__flexc {
+        @include m.flex(flex, column, space-between, center);
+        width: 50%;
+        padding: 2rem;
+        margin: 0 auto;
+        
+     }
+
+     &__imgc {
+     width: 6rem;
+     height: auto;
+     margin: 0.5rem 0 0.5rem 0;
+     } 
+
+     &__fotor {
+        margin: 0 auto;
+       width: 55%;
+     
+       @include m.tablet {
+        width: 20%;
+       }
+       
+     }
+
+     &__h3c {
+           color: v.$verde;
+           font-size: 1.8rem;
+           padding: 2rem;
+           margin: 0;
+           border-bottom: 3px solid v.$verde;
+
+           @include m.tablet {
+                 padding: 3rem 0 3rem 0;
+           }
+        }
+}

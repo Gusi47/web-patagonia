@@ -1,0 +1,11 @@
+@use 'base/variables' as v;
+
+.tex-center {
+    text-align: center;
+}
+
+.contenedor {    // para agregar en los bloques o elemento principales
+    width: 55%;
+   
+    margin: 0 auto;
+}

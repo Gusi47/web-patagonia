@@ -1,0 +1,24 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.separadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0 3rem 0;
+
+    &__imagenhoja {
+        width: 30%;
+        height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+       
+
+        @include m.tablet {
+            width: 10%;
+            height: auto;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+}

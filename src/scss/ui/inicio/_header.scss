@@ -1,0 +1,221 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+
+.header {
+  @include m.bgImage('../img/headermio.jpg');
+    width: 100%;
+    height: 100vh;
+ 
+    &__flex {
+       width: 100%;
+       height: 100%;
+       @include m.flex(flex, row, space-between, flex-start);
+
+  }
+  
+   &__context {
+    @include m.flex(flex, column, center, center);
+    margin-top: 15rem;
+    width: 100%;
+   
+    @include m.tablet {
+      // width: 35%;
+     
+      margin-top: 10rem;
+    }
+  }
+
+  &__h1 {
+   width: 100%;
+    font-family: v.$patagonia;
+    color: v.$fondoBody;
+    font-weight: 700;
+    font-size: clamp(5rem, 9vw, 9rem);
+    text-align: center;
+  
+    animation-name: pata;
+    animation-iteration-count:initial;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-direction: reverse;
+}
+
+@keyframes pata {
+     from {
+         transform: translatex(0);
+         opacity: 1;
+     }
+
+     to {
+         transform: translatex(-100%);
+         opacity: 0;
+     }
+ }
+ 
+
+
+  &__span {
+    display: block;
+    color: v.$fondoBody;
+    
+    font-size: clamp(7rem, 10vw, 10rem);
+    text-transform: none;
+    font-family: v.$gastrobar;
+    letter-spacing: 0.2rem;
+    
+    animation-name: spann;
+    animation-iteration-count:initial;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-direction: reverse;
+    
+  }
+
+  @keyframes spann {
+    from {
+        transform: translatex(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translatex(-100%);
+        opacity: 0;
+    }
+}
+
+    &__check {
+        position: absolute;
+        top: 70%;
+        right: 46%;
+        z-index: 9;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        opacity: 0;
+        @include m.tablet {
+            display: none;
+        }
+    
+    }
+    
+    &__burguer {
+        position: absolute;
+        top:70%;
+        right: 46%;
+        z-index: 8;
+        width: 3rem;
+        height: 0.6rem;
+        background-color: v.$blanco;
+        border-radius: 0.2rem;
+        transform: rotate(0deg) translate(0, 1.2rem);
+        transition: transform 0.5s ease, background-color 300ms ease;
+        transform-origin: top left;
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+    
+    &__burguer::before,
+    &__burguer::after {
+        content: ""; 
+        display: block;
+        width: 100%;
+        height: .6rem;
+        background-color: v.$blanco;
+        border-radius: .2rem;
+        transition: transform 0.5s ease;
+    }
+    
+    &__burguer::before {
+        transform: rotate(0deg) translate(0, -.9rem);
+        background-color:  v.$blanco;
+    }
+    
+    &__burguer::after {
+        transform: rotate(0deg) translate(0, .3rem);
+        background-color: v.$blanco;
+    }
+    
+    &__check:checked + &__burguer {
+        background-color: transparent;
+    }
+    
+    &__check:checked + &__burguer::before {
+    transform: rotate(45deg) translate(0, 0.2rem);
+    }
+    
+    &__check:checked + &__burguer::after {
+        transform: rotate(-45deg) translate(0.2rem, -0.4rem);
+    
+    }
+    
+    &__nav {
+        position: absolute;
+       
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: v.$amarillo;
+        transition: transform 300ms ease-in-out;
+        transform: translatex(-100%);
+
+        @include m.tablet {
+            transform: translate(0, 0);
+            background-color: transparent;
+            margin-top: 50rem;
+            width: 100%;
+            height: 20vh;
+        }
+    }
+
+    &__navegacion {
+      margin: 4rem 0 4rem 0;
+      height: 50%;
+
+       @include m.flex(flex, column, center, center);
+
+        @include m.tablet {
+            @include m.flex(flex, row, space-between, center);
+            margin-bottom: 5rem;
+            width: 70%;
+            height: 10%; 
+        }
+    }
+
+    &__link {
+      font-family: v.$patagonia;
+        font-size: 3rem;
+        text-align: left;
+        color: #f7f0e8;
+        text-align: center;
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+        
+         @include m.tablet {
+          font-size: 2rem;
+          margin-top: 4rem;
+          text-transform: uppercase;
+          color: v.$texto;
+          padding:  1rem;
+          transition: 300ms;
+          font-family: 'Source Serif Pro', serif;
+
+          &:hover {
+            background-color: v.$verde;
+            border-radius: 1rem;
+          }
+         }
+      }
+    
+    &__check:checked ~ &__nav {
+        transform: translatex(0);
+    }
+}

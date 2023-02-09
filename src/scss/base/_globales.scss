@@ -1,0 +1,39 @@
+@use 'variables' as v; //   Solo Varuables porque esta dentro de la carpeta base
+@use 'base/mixins' as m;
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*-- 1re igual 10 px, --para trabajar en rem. */ 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+
+    font-family: 'Lato', sans-serif;
+    font-size: 1,6rem;
+    background-color: v.$fondoBody;
+   
+    }
+
+p {
+    color: v.$negro;
+}
+
+a {
+    text-decoration: none;
+}
+
+img, picture, iframe, video, figure {
+    max-width: 100%;
+    display: block;
+}
